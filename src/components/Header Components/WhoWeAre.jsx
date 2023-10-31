@@ -15,7 +15,7 @@ function WhoWeAre(props) {
       };
 
   return (
-    <div className="wwa text-gray-600" onMouseLeave={ () => handleLinkClick('')} onClick={() => handleLinkClick('')}>
+    <div className="wwa text-gray-900" onMouseLeave={ () => handleLinkClick('')} onClick={() => handleLinkClick('')}>
         <div className="flex justify-center items-start gap-10 w-[100%] mt-10"> 
         {/* <h1 className='text-blue-500'>Solutions We Provide</h1> */}
             <div className="flex flex-col gap-10 justify-center items-center mt-4">

@@ -7,6 +7,7 @@ import EcomClientSatSec from "../../sections/ECommerce Service Page/Ecom Client 
 import MarkeetingDashBoardSection from "../../sections/Markeeting Service Page/Markeeting Dashboard Section/MarkeetingDashBoardSection" 
 import MarkSerMgmntSec from "../../sections/Markeeting Service Page/Markeeting Service Management Page/MarkSerMgmntSec"
 import MarkRWSliderSec from "../../sections/Markeeting Service Page/Markeeting Recent Work Slider/MarkRWSliderSec"
+import WorkedWithCI_Sec_LP from '../../sections/Worked With Companies Icons/WorkedWithCI_Sec_LP'
 
 function MarkeetingServicePage() {
   return (
@@ -18,6 +19,7 @@ function MarkeetingServicePage() {
           <MarkeetingDashBoardSection/>
           <MarkSerMgmntSec/>
           <MarkRWSliderSec/>
+          <WorkedWithCI_Sec_LP  />
           <EcomClientSatSec/>
           <ContactUsComponent/>
         </main>

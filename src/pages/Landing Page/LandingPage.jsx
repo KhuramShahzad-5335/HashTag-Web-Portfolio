@@ -12,7 +12,7 @@ import ContactUsComponent from "../../components/Contact Us/ContactUsComponent";
 
 function LandingPage() {
   return (
-    <div id="app__wrapper" className="mt-4">
+    <div id="app__wrapper" className="xl:mt-4 lg:mt-4 md:mt-0 sm:mt-0 mt-0">
       <nav id="nab_bar_cont">
       </nav>
       <main>

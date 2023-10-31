@@ -5,6 +5,8 @@ import CareerHero from './CareerHero'
 import Footer from '../Footer Section/Footer'
 import BGBlackBanner from './BGBlackBanner'
 import ContactUsComponent from '../../components/Contact Us/ContactUsComponent'
+import WorkedWithCI_Sec_LP from '../Worked With Companies Icons/WorkedWithCI_Sec_LP'
+import EcomClientSatSec from '../ECommerce Service Page/Ecom Client Satisfaction/EcomClientSatSec'
 
 const Careers = () => {
     return (
@@ -19,6 +21,8 @@ const Careers = () => {
             <ThreeCards />
             <BGBlackBanner />
             <JoinTeam />
+            <WorkedWithCI_Sec_LP/>
+            <EcomClientSatSec/>
             <ContactUsComponent />
             <Footer />
         </div>

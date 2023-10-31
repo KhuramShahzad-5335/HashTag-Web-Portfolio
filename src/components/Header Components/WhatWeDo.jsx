@@ -20,7 +20,7 @@ function WhatWeDo(props) {
       };
     
   return (
-    <div className="wwd text-gray-600" onMouseLeave={ () => handleLinkClick('')} onClick={() => handleLinkClick('')}>
+    <div className="wwd text-gray-900" onMouseLeave={ () => handleLinkClick('')} onClick={() => handleLinkClick('')}>
         
         <div className="flex justify-around items-start gap-3 w-[100%]">
 

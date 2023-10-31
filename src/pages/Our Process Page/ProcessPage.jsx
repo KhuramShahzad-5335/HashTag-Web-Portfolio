@@ -8,7 +8,7 @@ import WorkedWithCI_Sec_LP from "../../sections/Worked With Companies Icons/Work
 function ProcessPage() {
   return (
     <>
-    <main className="pt-24">
+    <main className="xl:mt-24 lg:mt-24 md:mt-0 sm:mt-0 mt-4">
       <Section1_process/>
       <WorkedWithCI_Sec_LP/>
       <EcomClientSatSec/>

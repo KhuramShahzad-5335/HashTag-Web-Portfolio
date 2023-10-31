@@ -33,10 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/design-service" element={<DesignServicePage />} />
-        <Route
-          path="/web-development-service"
-          element={<WebDevelopmentService />}
-        />
+        <Route path="/web-development-service" element={<WebDevelopmentService />} />
         <Route path="/marketing-service" element={<MarkeetingServicePage />} />
         <Route path="/ecommerce-service" element={<EComServicePage />} />
         <Route path="/process" element={<ProcessPage />} />

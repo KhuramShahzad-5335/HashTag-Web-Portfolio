@@ -10,7 +10,7 @@ function EngagmentModal() {
   return (
     <>
     {/* <Header/> */}
-    <main className="pt-10">
+    <main className="xl:mt-24 lg:mt-24 md:mt-0 sm:mt-0 mt-10">
     <Eng_section1/>
     <WorkedWithCI_Sec_LP/>
     <EcomClientSatSec/>

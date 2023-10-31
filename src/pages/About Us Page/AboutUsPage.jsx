@@ -14,7 +14,7 @@ function AboutUsPage() {
   return (
     <>
       {/* <Header/> */}
-        <main className="md:pt-24">
+        <main className="xl:mt-36 lg:mt-36 md:mt-0 sm:mt-0 mt-0">
           <AUHero_Section/>
           <EnvShowCase/>
           <AUOurComp/>

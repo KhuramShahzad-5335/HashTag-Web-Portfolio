@@ -80,6 +80,12 @@
 
 /* Latest Header Desktop Styles */
 
+#navLinkSizes{
+  color: rgb(67, 67, 67);
+  font-size: 15px;
+  font-weight: 400;
+}
+
 
 #navitem0,
 #navitem1,
@@ -94,7 +100,6 @@
 #navitem1:hover,
 #navitem2:hover,
 #navitem3:hover{
-  color: #0074FF;
   cursor: pointer;
 }
 

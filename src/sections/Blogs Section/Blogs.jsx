@@ -28,7 +28,7 @@ const Blogs = () => {
         dispatch(getAllBlogs(keyword, currentPage))
     }, [keyword, currentPage, dispatch])
     return (
-        <div className="md:pt-24">
+        <div className="xl:mt-20 lg:mt-20 md:mt-0 sm:mt-0 mt-0">
             {/* <Header /> */}
             <Hero />
             <Featured />
