@@ -99,7 +99,7 @@ function OurServicesSection() {
               Through Compelling Banner Designs That Drive Engagement And
               Success.
             </p>
-            <Link to = "design-services" className="mt-4 text-white bg-[#666666] text-center w-56 py-2 text-md font-semibold rounded-xl hover:bg-[#52AEEE] hover:text-black"
+            <Link to = "/design-services" className="mt-4 text-white hidden bg-[#666666] text-center w-56 py-2 text-md font-semibold rounded-xl hover:bg-[#52AEEE] hover:text-black"
             style={{zIndex: 99999}}
             >
               Read More

@@ -35,12 +35,12 @@ function DevelopmentSection() {
             Website Should Be A Demon And Grab Every Possible Customer As You
             Can Possible Handle.
           </p>
-          <button
+          {/* <button
             id="services__section__button"
             style={{ margin: "10px  0px" }}
           >
             Read More
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="row-image-sec">

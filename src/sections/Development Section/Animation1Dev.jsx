@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function Animation1Dev() {
   const [scrollDirection, setScrollDirection] = useState("scroll-up");
@@ -41,7 +41,7 @@ function Animation1Dev() {
           scrollDirection === "scroll-up" ? "scroll-right" : "scroll-left"
         }
       >
-        <div class="scroll-right">
+        <div className="scroll-right">
           <div id="section8_animation">
             <img src="/6.png" alt=" ws" id="dev_animation_img" />
           </div>

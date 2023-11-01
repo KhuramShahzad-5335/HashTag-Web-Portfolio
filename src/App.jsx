@@ -1,4 +1,6 @@
 import "./App.css";
+// import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DesignServicePage from "./pages/Design Service Page/DesignServicePage";
 import WebDevelopmentService from "./pages/WebDevelopmentService/WebDevelopmentService";
@@ -14,20 +16,12 @@ import Blogs from "./sections/Blogs Section/Blogs";
 import BlogPage from "./sections/Blogs Section/BlogPage";
 import Careers from "./sections/Careers/Careers";
 import JobDetails from "./sections/Careers/JobDetails";
-import { Toaster } from "react-hot-toast";
 import Header from "./sections/Header Section/Header";
-import { useEffect } from "react";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
-
-  function ScrollToTop() {
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-  
-    return null;
-  }
   return (
     <Router>
+      <ScrollToTop/>
       <Header />
       <ScrollToTop />
       <Routes>

@@ -9,7 +9,7 @@ function EcomClientSatSec() {
             <img src={kayla} alt="kayla our client"  className="w-14 rounded-full h-auto shadow-lg"/>
             <div className="flex flex-col items-center justify-center">
                 <p className="text-[#2c2c2c] font-semibold">Amanda Perez</p>
-                <p className="text-[#888888]">Director - Client Services(Cintillate)</p>
+                <p className="text-[#888888]">Director - Client Services(Scintillate)</p>
             </div>
         </div>
     </div>

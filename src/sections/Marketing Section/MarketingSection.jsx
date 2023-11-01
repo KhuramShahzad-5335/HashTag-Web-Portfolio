@@ -58,7 +58,7 @@ function MarketingSection() {
         src={Whatsapp} alt="Whatsapp Icon" />
       </div>
 
-      <h1 id="mar__sec__subheading">Markeeting</h1>
+      <h1 id="mar__sec__subheading">Marketing</h1>
       <h3 id="mar__sec__mainheading">Social Media Marketing</h3>
       <p id="mar__sec__desc">
         Social Media Marketing A Great Method To Bring Sales For Your Business.

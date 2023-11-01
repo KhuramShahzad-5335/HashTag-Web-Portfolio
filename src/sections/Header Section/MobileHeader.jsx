@@ -1,49 +1,51 @@
-import { Fragment, useState } from 'react'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+/* eslint-disable no-unused-vars */
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Dialog, Disclosure} from '@headlessui/react'
 import {
-    ArrowPathIcon,
     Bars3Icon,
-    ChartPieIcon,
-    CursorArrowRaysIcon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
-import { Link } from 'react-router-dom'
-
-const webdevelopment = [
-    { name: 'Frontend Development', to: "/web-development-service" },
-    { name: 'Backend Development', to: "/web-development-service" },
-    { name: 'Full Stack Development', to: "/web-development-service" },
-]
-const ecommerce = [
-    { name: 'Amazon', to: "/ecommerce-service" },
-    { name: 'Ebay', to: "/ecommerce-service" },
-    { name: 'Shopify', to: "/ecommerce-service" },
-]
-const marketing = [
-    { name: 'Instagram', to: "/marketing-service" },
-    { name: 'Facebook', to: "/marketing-service" },
-    { name: 'LinkedIn', to: "/marketing-service" },
-    { name: 'Facebook', to: "/marketing-service" },
-]
-const designing = [
-    { name: 'Logo Desigining', to: "/design-service" },
-    { name: 'Poster Designing', to: "/design-service" },
-    { name: 'Web Desigining', to: "/design-service" },
-    { name: 'Brochure Designing', to: "/design-service" },
-]
-
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+// import { IconButton, Collapse } from '@mui/material';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import RunningWithErrorsIcon from '@mui/icons-material/RunningWithErrors';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import DrawIcon from '@mui/icons-material/Draw';
+import WebIcon from '@mui/icons-material/Web';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CampaignIcon from '@mui/icons-material/Campaign';
+import LightbulbCircleIcon from '@mui/icons-material/LightbulbCircle';
 
 export default function MobileHeader() {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [accordion1State, setAccordion1State] = useState(true);
+    const [accordion2State, setAccordion2State] = useState(false);
+
+    function handleWWDAcc(){
+        if(accordion1State == true){
+            setAccordion1State(false);
+        }
+        if(accordion1State == false){
+            setAccordion1State(true)
+            setAccordion2State(false)
+        }
+    }
+
+    function handleWWAAcc(){
+        if(accordion2State == true){
+            setAccordion2State(false);
+        }
+        if(accordion2State == false){
+            setAccordion2State(true)
+            setAccordion1State(false)
+        }
+    }
+
 
     return (
+        // Header Section
         <header className="lg:hidden">
             <nav className="mx-aut flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div className="flex lg:flex-1">
@@ -61,71 +63,6 @@ export default function MobileHeader() {
                         <span className="sr-only">Open main menu</span>
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
-                </div>
-                <Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    <Popover className="relative">
-                        <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                            Product
-                            <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                        </Popover.Button>
-
-                        <Transition
-                            as={Fragment}
-                            enter="transition ease-out duration-200"
-                            enterFrom="opacity-0 translate-y-1"
-                            enterTo="opacity-100 translate-y-0"
-                            leave="transition ease-in duration-150"
-                            leaveFrom="opacity-100 translate-y-0"
-                            leaveTo="opacity-0 transltoate-y-1"
-                        >
-                            <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl ">
-                                <div className="p-4">
-                                    {webdevelopment.map((item) => (
-                                        <div 
-                                            key={item.name}
-                                            className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6"
-                                        >
-                                            {/* <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg  ">
-                                                <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
-                                            </div> */}
-                                            {/* <div className="flex-auto">
-                                                <a href={item.href} className="block font-semibold text-gray-900">
-                                                    {item.name}
-                                                    <span className="absolute inset-0" />
-                                                </a>
-                                                <p className="mt-1 text-gray-600">{item.description}</p>
-                                            </div> */}
-                                        </div>
-                                    ))}
-                                </div>
-                                {/* <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                                    {callsToAction.map((item) => (
-                                        <a
-                                            key={item.name}
-                                            href={item.href}
-                                            className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                                        >
-                                            <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-                                            {item.name}
-                                        </a>
-                                    ))}
-                                </div> */}
-                            </Popover.Panel>
-                        </Transition>
-                    </Popover>
-
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Features
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Marketplace
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Company
-                    </a>
-                </Popover.Group>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-
                 </div>
             </nav>
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -149,146 +86,106 @@ export default function MobileHeader() {
                             <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
                     </div>
-                    <div className="mt-6 flow-root">
-                        <div className="-my-6 divide-y">
+                    
+                    
+                    
+                    {mobileMenuOpen && (
+                      // accordions start HERE
+                      <div className='flex flex-col justify-center items-center gap-10 w-[100%] bg-white mt-14 text-gray-700 text-[16px] font-[400] mx-auto'>
+                             <div className='flex justify-between items-center w-[100%] border-b border-gray-300 pb-2'>
+                                <Link to = "/process" className='flex justify-center gap-4' onClick={() => setMobileMenuOpen(false)}>
+                                    <RunningWithErrorsIcon/>
+                                    <h1>The Hashtag Web Way</h1>
+                                </Link>
+                            </div>                 
+                                  
+                            
+                            <div className='flex flex-col justify-between items-center w-[100%]'>
+                                <div className='flex justify-between items-center w-[100%] border-b border-gray-300 pb-2' onClick={handleWWDAcc}>
+                                    <div className='flex justify-center gap-4'>
+                                        <TaskAltIcon/>
+                                        <h1>What We Do</h1>
+                                    </div>
+                                    {accordion1State &&(<ArrowDropUpIcon/>)}
+                                    {(!accordion1State) &&(<ArrowDropDownIcon/>)}
+                                </div>
+                                
+                                
+                                
+                                {accordion1State && (
+                                        <div className='flex flex-col items-center justify-center gap-5 w-[76%] mt-5 mb-6'>
+                                            <Link to = "/web-development-service" className='flex justify-start items-center gap-4 w-[100%]' onClick={() => setMobileMenuOpen(false)}>
+                                                <DrawIcon/>
+                                                <h1>Design And UI / UX Services</h1>
+                                            </Link>
 
+                                            <Link to = "/web-development-service" className='flex justify-start items-center gap-4 w-[100%]' onClick={() => setMobileMenuOpen(false)}>
+                                                <WebIcon/>
+                                                <h1>Website Development</h1>
+                                            </Link>
 
-                            <div className="space-y-2 mt-12 py-4">
-                                <Disclosure as="div" className="-mx-3">
-                                    {({ open }) => (
-                                        <>
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg hover:py-1 pl-3 pr-3.5 text-base font-semibold leading-7 transition border-l-4 border-transparent hover:border-blue-500 duration-400 ease-in-out">
-                                                Web Development
-                                                <ChevronDownIcon
-                                                    className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                                                    aria-hidden="true"
-                                                />
-                                            </Disclosure.Button>
+                                            <Link to = "/marketing-service" className='flex justify-start items-center gap-4 w-[100%]' onClick={() => setMobileMenuOpen(false)}>
+                                                <CampaignIcon/>
+                                                <h1>Marketing Solutions</h1>
+                                            </Link>
 
-
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {webdevelopment.map((item) => (
-                                                    <Link
-                                                        key={item.name}
-                                                        as="a"
-                                                        to={item.to}
-                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 "
-                                                    >
-                                                        {item.name}
-                                                    </Link>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
+                                            <Link to = "/ecommerce-service" className='flex justify-start items-center gap-4 w-[100%]' onClick={() => setMobileMenuOpen(false)}>
+                                                <ShoppingCartIcon/>
+                                                <h1>Ecommerce Solutions</h1>
+                                            </Link>
+                                        </div>
                                     )}
-                                </Disclosure>
+                            </div>                   
+                            
 
-                                {/* <hr /> */}
-                            </div>
+                            <div className='flex justify-between items-center w-[100%] border-b border-gray-300 pb-2'>
+                                <Link to = "/engagement-model" className='flex justify-center gap-4' onClick={() => setMobileMenuOpen(false)}>
+                                    <ConnectWithoutContactIcon/>
+                                    <h1>How We Engage</h1>
+                                </Link>
+                            </div>                 
+                            
+                            <div className='flex flex-col items-center justify-between gap-2 w-[100%]'>
+                                <div className='flex justify-between items-center w-[100%] border-b border-gray-300 pb-2' onClick={handleWWAAcc}>
+                                    <div className='flex justify-center gap-4'>
+                                        <LightbulbCircleIcon/>
+                                        <h1>Who We Are</h1>
+                                    </div>
+                                    {accordion2State &&(<ArrowDropUpIcon/>)}
+                                    {(!accordion2State) &&(<ArrowDropDownIcon/>)}
+                                </div>
+                                {accordion2State && (
+                                        <div className='flex flex-col items-center justify-center gap-5 w-[76%] mt-5 mb-4'>
+                                            <Link to = "/about-us" className='flex justify-start items-center gap-4 w-[100%]' onClick={() => setMobileMenuOpen(false)}>
+                                                <DrawIcon/>
+                                                <h1>About Us</h1>
+                                            </Link>
 
+                                            <Link to = "/contact-us" className='flex justify-start items-center gap-4 w-[100%]' onClick={() => setMobileMenuOpen(false)}>
+                                                <WebIcon/>
+                                                <h1>Contact Us</h1>
+                                            </Link>
 
-                            <div className="space-y-2 py-4">
-                                <Disclosure as="div" className="-mx-3">
-                                    {({ open }) => (
-                                        <>
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg hover:py-1 pl-3 pr-3.5 text-base font-semibold leading-7 transition border-l-4 border-transparent hover:border-blue-500 duration-400 ease-in-out">
-                                                E-Commerce
-                                                <ChevronDownIcon
-                                                    className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                                                    aria-hidden="true"
-                                                />
-                                            </Disclosure.Button>
+                                            <Link to = "/careers" className='flex justify-start items-center gap-4 w-[100%]' onClick={() => setMobileMenuOpen(false)}>
+                                                <CampaignIcon/>
+                                                <h1>Careers</h1>
+                                            </Link>
 
-
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {ecommerce.map((item) => (
-                                                    <Link
-                                                        key={item.name}
-                                                        as="a"
-                                                        to={item.to}
-                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 "
-                                                    >
-                                                        {item.name}
-                                                    </Link>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
+                                            <Link to = "/blogs" className='flex justify-start items-center gap-4 w-[100%]' onClick={() => setMobileMenuOpen(false)}>
+                                                <ShoppingCartIcon/>
+                                                <h1>Our Blogs</h1>
+                                            </Link>
+                                        </div>
                                     )}
-                                </Disclosure>
-
                             </div>
-
-
-                            <div className="space-y-2 py-4">
-                                <Disclosure as="div" className="-mx-3">
-                                    {({ open }) => (
-                                        <>
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg hover:py-1 pl-3 pr-3.5 text-base font-semibold leading-7 transition border-l-4 border-transparent hover:border-blue-500 duration-400 ease-in-out">
-                                                Desigining
-                                                <ChevronDownIcon
-                                                    className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                                                    aria-hidden="true"
-                                                />
-                                            </Disclosure.Button>
-
-
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {designing.map((item) => (
-                                                    <Link
-                                                        key={item.name}
-                                                        as="a"
-                                                        to={item.to}
-                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 "
-                                                    >
-                                                        {item.name}
-                                                    </Link>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
-                                    )}
-                                </Disclosure>
-
-                            </div>
-
-
-
-                            <div className="space-y-2 py-4">
-                                <Disclosure as="div" className="-mx-3">
-                                    {({ open }) => (
-                                        <>
-                                            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg hover:py-1 pl-3 pr-3.5 text-base font-semibold leading-7 transition border-l-4 border-transparent hover:border-blue-500 duration-400 ease-in-out">
-                                                Marketing
-                                                <ChevronDownIcon
-                                                    className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                                                    aria-hidden="true"
-                                                />
-                                            </Disclosure.Button>
-
-
-                                            <Disclosure.Panel className="mt-2 space-y-2">
-                                                {marketing.map((item,index) => (
-                                                    <Link
-                                                        key={index}
-                                                        as="a"
-                                                        to={item.to}
-                                                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 "
-                                                    >
-                                                        {item.name}
-                                                    </Link>
-                                                ))}
-                                            </Disclosure.Panel>
-                                        </>
-                                    )}
-                                </Disclosure>
-
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
+                            <button className='absolute bottom-0 outline-none bg-blue-500 px-[100%] py-3 text-white font-bold text-[18px] transition-all ease-linear-[1sec] ' onClick={() => setMobileMenuOpen(false)}>Close</button>
+                </div>
+                //  accordions END
+                )}
                 </Dialog.Panel>
             </Dialog>
         </header>
+        // Header Section Ends here
     )
 }
+
